@@ -1,0 +1,474 @@
+/* 기본 레이아웃 */
+body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.page-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 페이지 제목 */
+h1 {
+    color: #333;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 게임 스타일 카드 컨테이너 */
+.services-list {
+    background: transparent;
+    padding: 20px;
+    perspective: 1000px;
+}
+
+/* 서비스 아이템 게임 카드 스타일 */
+.service-item {
+    padding: 20px;
+    margin-bottom: 20px;
+    background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+    border: 2px solid #333;
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.3s ease;
+    transform-style: preserve-3d;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-item:hover {
+    transform: translateY(-5px) rotateX(5deg);
+    border-color: #e50914;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2),
+                0 0 30px rgba(229, 9, 20, 0.2),
+                inset 0 0 15px rgba(229, 9, 20, 0.1);
+}
+
+.service-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 6px;
+    background: linear-gradient(45deg, transparent, rgba(229, 9, 20, 0.1));
+    pointer-events: none;
+}
+
+/* 서비스 이름 */
+.service-name {
+    font-size: 18px;
+    color: #e50914;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(229, 9, 20, 0.3);
+    letter-spacing: 1px;
+}
+
+/* 서비스 세부 정보 */
+.service-details {
+    margin-left: 15px;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+.service-detail-item {
+    margin-bottom: 8px;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+}
+
+.detail-label {
+    color: #999;
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+.detail-value {
+    color: #ffffff;
+    background: rgba(229, 9, 20, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(229, 9, 20, 0.2);
+}
+
+/* 편집 버튼 */
+.mdl-button--fab {
+    background-color: #1a1a1a !important;
+    color: #e50914 !important;
+    border: 1px solid #333 !important;
+}
+
+.mdl-button--fab:hover {
+    background-color: #2a2a2a !important;
+    border-color: #e50914 !important;
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.3) !important;
+}
+
+.mdl-button--fab i {
+    color: #e50914 !important;
+}
+
+/* 연필 아이콘 컨테이너 */
+.edit-container {
+    background-color: #1a1a1a !important;
+    border: 1px solid #333;
+}
+
+/* 연필 아이콘 */
+.material-icons {
+    color: #e50914 !important;
+}
+
+/* 버튼 기본 스타일 덮어쓰기 */
+button.mdl-button--fab.mdl-button--colored {
+    background-color: #1a1a1a !important;
+    color: #e50914 !important;
+}
+
+button.mdl-button--fab.mdl-button--colored:hover {
+    background-color: #2a2a2a !important;
+}
+
+/* 핑크색 배경 덮어쓰기 */
+.mdl-button--fab.mdl-button--colored {
+    background-color: #1a1a1a !important;
+}
+
+/* 아이콘 버튼 특화 스타일 */
+.mdl-button--icon {
+    background-color: #1a1a1a !important;
+    border: 1px solid #333 !important;
+}
+
+.mdl-button--icon:hover {
+    background-color: #2a2a2a !important;
+    border-color: #e50914 !important;
+}
+
+.mdl-button--icon .material-icons {
+    color: #e50914 !important;
+}
+
+/* 헤더 스타일 */
+.mdl-layout__header {
+    background-color: #000;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.mdl-layout__header-row {
+    padding: 0 32px;
+    height: 68px;
+}
+
+.mdl-layout-title {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #e50914;
+}
+
+/* 홈 버튼 스타일 */
+#returnToEarth {
+    margin-left: 24px;
+    background-color: #e50914;
+    color: white;
+    font-weight: 500;
+    text-transform: none;
+    min-width: 140px;
+    height: 44px;
+    border-radius: 4px;
+    border: none;
+    transition: all 0.2s ease;
+    font-size: 16px;
+}
+
+#returnToEarth:hover {
+    background-color: #ff0a16;
+    transform: scale(1.05);
+}
+
+/* 카드 스타일 */
+.demo-card-wide.mdl-card {
+    width: 100%;
+    margin-top: 24px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.mdl-card__supporting-text {
+    padding: 24px;
+}
+
+/* 서비스 섹션 스타일 */
+.service-section {
+    margin-bottom: 80px;  /* 서비스 섹션 아래 큰 여백 */
+}
+
+/* 서비스 아이템 구분선 */
+.service-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #dee2e6, transparent);
+}
+
+/* 네임스페이스와 포트 섹션 공통 스타일 */
+.namespace-section,
+.ports-section {
+    padding: 24px;
+    margin: 80px 0 40px 60px;  /* 상단 여백 크게 증가 */
+    position: relative;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    max-width: 85%;
+}
+
+/* 세로 구분선 */
+.namespace-section::before,
+.ports-section::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: -40px;  /* 위로 더 확장 */
+    height: calc(100% + 40px);  /* 높이 증가 */
+    width: 2px;
+    background: linear-gradient(to bottom, #e50914 0%, #dee2e6 100%);
+    opacity: 0.5;
+}
+
+/* 섹션 제목 스타일 */
+.namespace-title,
+.ports-title {
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+/* 가로 연결선 */
+.namespace-title::before,
+.ports-title::before {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    width: 20px;
+    height: 2px;
+    background: linear-gradient(to right, #e50914, #dee2e6);
+    opacity: 0.5;
+}
+
+/* 제목 밑줄 */
+.namespace-title::after,
+.ports-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, #e50914, transparent);
+    opacity: 0.3;
+}
+
+/* 중첩된 서비스 아이템 스타일 */
+.namespace-section .service-item,
+.ports-section .service-item {
+    margin: 16px 0;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+/* 그리드 레이아웃 */
+.service-details {
+    margin-left: 20px;
+    margin-bottom: 60px;
+}
+
+/* 포트 섹션 추가 여백 */
+.ports-section {
+    margin-top: 40px;  /* 네임스페이스 섹션과의 간격 */
+}
+
+/* 에러 알림 스타일 */
+.error-alert {
+    padding: 16px 24px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 0, 0, 0.2);
+    color: #fff;
+    border: 1px solid #e50914;
+    border-radius: 4px;
+}
+
+/* 다이얼로그 스타일 */
+.mdl-dialog {
+    width: 500px;
+    border-radius: 4px;
+    padding: 24px;
+    background-color: #ffffff;
+    color: #333;
+    border: 1px solid #dee2e6;
+}
+
+.mdl-dialog__title {
+    color: #333;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.weight-slider-container {
+    margin: 24px 0;
+    padding: 16px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    border: 1px solid #dee2e6;
+}
+
+/* 슬라이더 스타일 */
+.weight-slider {
+    width: 100%;
+    height: 4px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #4d4d4d;
+    border-radius: 2px;
+    outline: none;
+}
+
+.weight-slider::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #e50914;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.weight-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #e50914;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.weight-slider::-ms-thumb {
+    width: 16px;
+    height: 16px;
+    background: #e50914;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.weight-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    background: #ff0a16;
+}
+
+/* 스크롤바 스타일 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f3f5;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #adb5bd;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e50914;
+}
+
+/* 슬라이더 값 텍스트 */
+.weight-value {
+    color: #fff;
+    font-size: 14px;
+    margin-left: 8px;
+}
+
+/* 섹션 구분선 */
+.section-divider {
+    margin: 60px 0;
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #e50914, #dee2e6);
+    opacity: 0.3;
+}
+
+/* MDL 리스트 아이템 스타일 재정의 */
+.mdl-list__item-primary-content {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.mdl-list__item {
+    padding: 0;
+    min-height: auto;
+}
+
+.mdl-list__item--two-line {
+    height: auto;
+    padding: 0;
+}
+
+/* 애니메이션 키프레임 */
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(0, 255, 157, 0.2); }
+    50% { box-shadow: 0 0 20px rgba(0, 255, 157, 0.4); }
+    100% { box-shadow: 0 0 5px rgba(0, 255, 157, 0.2); }
+}
+
+/* 브라우저 기본 스타일 제거 */
+input[type="range"],
+input[type="button"],
+button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* 연필 아이콘 스타일 */
+.edit-icon {
+    color: #e50914;
+    background-color: transparent;
+} 

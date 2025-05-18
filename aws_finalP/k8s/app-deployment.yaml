@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: istio-traffic-manager
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: istio-traffic-manager
+  template:
+    metadata:
+      labels:
+        app: istio-traffic-manager
+    spec:
+      containers:
+      - name: frontend
+        image: istio-traffic-manager-frontend:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: BACKEND_URL
+          value: http://backend-service:3001
+
+      - name: backend
+        image: istio-traffic-manager-backend:latest
+        ports:
+        - containerPort: 3001
+        volumeMounts:
+        - name: kubeconfig
+          mountPath: /app/config
+          readOnly: true
+      
+      volumes:
+      - name: kubeconfig
+        hostPath:
+          path: /root/.kube
+          type: Directory
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+spec:
+  selector:
+    app: istio-traffic-manager
+  ports:
+  - port: 3000
+    targetPort: 3000
+  type: NodePort
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+spec:
+  selector:
+    app: istio-traffic-manager
+  ports:
+  - port: 3001
+    targetPort: 3001
+  type: ClusterIP 

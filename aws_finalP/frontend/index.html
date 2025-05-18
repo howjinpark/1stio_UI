@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Istio Traffic Management</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">Istio Traffic Management</span>
+                <div class="mdl-layout-spacer"></div>
+                <button id="returnToEarth" 
+                        class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent"
+                        onclick="window.location.href='http://localhost:1234'">
+                    Return to Earth
+                </button>
+            </div>
+        </header>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--8-col mdl-cell--2-offset">
+                        <div id="errorAlert" class="error-alert" style="display: none;">
+                            <div class="alert-content"></div>
+                        </div>
+
+                        <div class="demo-card-wide mdl-card mdl-shadow--2dp" style="width: 100%;">
+                            <div class="mdl-card__supporting-text">
+                                <ul id="servicesList" class="mdl-list">
+                                    <!-- Services will be dynamically inserted here -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Dialog -->
+    <dialog class="mdl-dialog" id="weightDialog">
+        <h4 class="mdl-dialog__title">Edit Traffic Weights</h4>
+        <div class="mdl-dialog__content">
+            <div id="weightsContainer">
+                <!-- Weights sliders will be dynamically inserted here -->
+            </div>
+        </div>
+        <div class="mdl-dialog__actions">
+            <button type="button" class="mdl-button close">Cancel</button>
+            <button type="button" class="mdl-button mdl-button--colored mdl-button--raised" id="saveWeights">Save</button>
+        </div>
+    </dialog>
+
+    <script src="app.js"></script>
+</body>
+</html> 
