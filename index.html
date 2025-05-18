@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D 지구본</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        canvas {
+            width: 100vw;
+            height: 100vh;
+            display: none;
+        }
+        #credits {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 1000;
+            overflow: hidden;
+        }
+        #credits-content {
+            text-align: center;
+            animation: scrollCredits 12s linear forwards;
+            padding: 20px;
+        }
+        .project-title {
+            font-size: 4em;
+            margin-bottom: 2em;
+            color: #FFD700;
+        }
+        .section-title {
+            font-size: 2em;
+            margin: 1.5em 0 0.5em 0;
+            color: #ADD8E6;
+        }
+        .credit-item {
+            font-size: 1.5em;
+            margin: 0.3em 0;
+            opacity: 0.9;
+        }
+        @keyframes scrollCredits {
+            0% {
+                transform: translateY(100vh);
+            }
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="credits">
+        <div id="credits-content">
+            <div class="project-title">1stio</div>
+            
+            <div class="section-title">Technologies</div>
+            <div class="credit-item">Kubernetes (k8s)</div>
+            <div class="credit-item">Istio</div>
+            <div class="credit-item">Docker</div>
+            
+            <div class="section-title">Created by</div>
+            <div class="credit-item">PARK HOJIN</div>
+            <div class="credit-item">PARK YEONSU</div>
+            <div class="credit-item">KIM SUNGHO</div>
+            <div class="credit-item">LEE SUJUNG</div>
+        </div>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+    <script>
+        // 애니메이션이 끝나면 credits를 제거하고 캔버스를 표시
+        setTimeout(() => {
+            const credits = document.getElementById('credits');
+            const canvas = document.querySelector('canvas');
+            credits.style.display = 'none';
+            canvas.style.display = 'block';
+        }, 12000); // 12초 후 (애니메이션 시간과 동일)
+    </script>
+</body>
+</html> 

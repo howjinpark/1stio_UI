@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="ko"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D 지구본</title>
+    <style>body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+canvas {
+  width: 100vw;
+  height: 100vh;
+  display: none;
+}
+
+#credits {
+  color: #fff;
+  z-index: 1000;
+  background-color: #000;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#credits-content {
+  text-align: center;
+  padding: 20px;
+  animation: 12s linear forwards scrollCredits;
+}
+
+.project-title {
+  color: gold;
+  margin-bottom: 2em;
+  font-size: 4em;
+}
+
+.section-title {
+  color: #add8e6;
+  margin: 1.5em 0 .5em;
+  font-size: 2em;
+}
+
+.credit-item {
+  opacity: .9;
+  margin: .3em 0;
+  font-size: 1.5em;
+}
+
+@keyframes scrollCredits {
+  0% {
+    transform: translateY(100vh);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+</style>
+</head>
+<body>
+    <div id="credits">
+        <div id="credits-content">
+            <div class="project-title">1stio</div>
+            
+            <div class="section-title">Technologies</div>
+            <div class="credit-item">Kubernetes (k8s)</div>
+            <div class="credit-item">Istio</div>
+            <div class="credit-item">Docker</div>
+            
+            <div class="section-title">Created by</div>
+            <div class="credit-item">PARK HOJIN</div>
+            <div class="credit-item">PARK YEONSU</div>
+            <div class="credit-item">KIM SUNGHO</div>
+            <div class="credit-item">LEE SUJUNG</div>
+        </div>
+    </div>
+    <script type="module" src="/aws_earth.1fcc916e.js"></script>
+    <script>// 애니메이션이 끝나면 credits를 제거하고 캔버스를 표시
+setTimeout(()=>{
+    const credits = document.getElementById('credits');
+    const canvas = document.querySelector('canvas');
+    credits.style.display = 'none';
+    canvas.style.display = 'block';
+}, 12000); // 12초 후 (애니메이션 시간과 동일)
+
+</script>
+
+ </body></html>
